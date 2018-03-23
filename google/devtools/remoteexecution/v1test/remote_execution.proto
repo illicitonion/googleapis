@@ -623,6 +623,11 @@ message ActionResult {
   // [ContentAddressableStorage][google.devtools.remoteexecution.v1test.ContentAddressableStorage].
   // See `stderr_raw` for when this will be set.
   Digest stderr_digest = 8;
+
+  // The time taken from when the command line was invoked, until it exited.
+  // If the ActionResult was returned from a cache, this value should contain how long the original
+  // invocation took to run.
+  google.protobuf.Duration execution_time = 9;
 }
 
 // An `OutputFile` is similar to a
